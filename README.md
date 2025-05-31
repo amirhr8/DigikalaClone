@@ -51,3 +51,10 @@ DigikalaClone/
 │
 ├── utils/ # Constants, helper functions, etc.
  └── MainActivity.kt # Main entry point with NavHost
+
+## 🧰 Getting Started
+
+```bash
+git clone https://github.com/amirhr8/DigikalaClone.git
+cd DigikalaClone
+
