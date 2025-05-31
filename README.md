@@ -36,4 +36,18 @@ A high-fidelity clone of **Digikala**, Iran’s largest e-commerce platform, bui
 - 🔄 API error retries + fallback scenarios
 
 ## 📁 Project Structure
-
+DigikalaClone/
+├── data/
+│ ├── api/ # Retrofit service interfaces
+│ ├── model/ # DTOs and data classes
+│ └── repository/ # Repository pattern for data handling
+│
+├── di/ # Hilt modules for dependency injection
+│
+├── ui/
+│ ├── screens/ # Feature-based screens (Home, Detail, Cart, etc.)
+│ ├── components/ # Reusable Composable components
+│ └── theme/ # App theming setup (colors, typography)
+│
+├── utils/ # Constants, helper functions, etc.
+ └── MainActivity.kt # Main entry point with NavHost
