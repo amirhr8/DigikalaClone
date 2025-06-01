@@ -9,13 +9,12 @@ plugins {
     alias(libs.plugins.hilt)
 
 }
-// خواندن فایل key.properties
+// key.properties
 val apikeyPropertiesFile = rootProject.file("key.properties")
 val apikeyProperties = Properties().apply {
     load(FileInputStream(apikeyPropertiesFile))
 }
 
-// گرفتن مقدار کلید از فایل
 val apiKey = apikeyProperties["X_API_KEY"] as String
 
 android {

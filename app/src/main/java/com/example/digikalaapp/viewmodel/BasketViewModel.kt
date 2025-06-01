@@ -23,7 +23,6 @@ class BasketViewModel @Inject constructor(private val repository: BasketReposito
         viewModelScope.launch {
             suggestedList.emit(repository.getSuggestedItems())
         }
-
     }
 
     fun insertCartItem(cart: CartItem) {
@@ -31,8 +30,6 @@ class BasketViewModel @Inject constructor(private val repository: BasketReposito
             repository.insertCartItem(cart)
         }
     }
-
-
 
 }
 
