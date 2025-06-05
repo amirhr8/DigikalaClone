@@ -43,7 +43,7 @@ fun ShoppingCard(
         } else {
             items(currentCartItems.value) { item ->
 
-                CartItemCard(item)
+//                CartItemCard(item)
 
             }
         }

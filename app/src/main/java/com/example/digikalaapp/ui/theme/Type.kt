@@ -37,6 +37,12 @@ val Typography.extraBoldNumber: TextStyle
         fontSize = 26.sp,
     )
 
+val Typography.veryExtraSmall: TextStyle
+    @Composable
+    get() = TextStyle(
+        fontFamily = font_standard,
+        fontSize = 10.sp,
+    )
 
 val Typography.extraSmall: TextStyle
     @Composable
