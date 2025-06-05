@@ -3,13 +3,12 @@ package com.example.digikalaapp.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.digikalaapp.data.model.basket.CartItem
-import com.example.digikalaapp.data.model.category.SubCategory
 import com.example.digikalaapp.data.model.home.StoreProduct
 import com.example.digikalaapp.data.remote.NetworkResult
 import com.example.digikalaapp.repository.BasketRepository
-import com.example.digikalaapp.repository.Categoryrepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -19,6 +18,10 @@ class BasketViewModel @Inject constructor(private val repository: BasketReposito
     ViewModel() {
 
     val suggestedList = MutableStateFlow<NetworkResult<List<StoreProduct>>>(NetworkResult.Loading())
+
+    val currentCartItems: Flow<List<CartItem>> = repository.currentCartItem
+
+
     fun getSuggestedItems() {
         viewModelScope.launch {
             suggestedList.emit(repository.getSuggestedItems())
