@@ -3,6 +3,7 @@ package com.example.digikalaapp.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.digikalaapp.data.model.basket.CartItem
+import com.example.digikalaapp.data.model.basket.CartStatus
 import com.example.digikalaapp.data.model.home.StoreProduct
 import com.example.digikalaapp.data.remote.NetworkResult
 import com.example.digikalaapp.repository.BasketRepository
@@ -28,11 +29,30 @@ class BasketViewModel @Inject constructor(private val repository: BasketReposito
         }
     }
 
-    fun insertCartItem(cart: CartItem) {
+    fun insertCartItem(item: CartItem) {
         viewModelScope.launch(Dispatchers.IO) {
-            repository.insertCartItem(cart)
+            repository.insertCartItem(item)
         }
     }
+
+    fun removeCartItem(item: CartItem) {
+        viewModelScope.launch {
+            repository.removeFromCart(item)
+        }
+    }
+
+    fun changeCartItemCount(id: String, newCount: Int) {
+        viewModelScope.launch {
+            repository.changeCartItemCount(id, newCount)
+        }
+    }
+
+    fun changeCartItemStatus(id: String, newStatus: CartStatus) {
+        viewModelScope.launch {
+            repository.changeCartItemStatus(id, newStatus)
+        }
+    }
+
 
 }
 
